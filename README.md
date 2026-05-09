@@ -2,7 +2,7 @@
 
 > **The Gunbot Trading Dashboard you always wanted.**
 
-**Mimix Monitor** is a real-time web dashboard for Gunbot traders. It aggregates data from all your Gunbot instances and exchanges into a single, clean interface — giving you full visibility over your portfolio, PnL, positions, DCA risk, and more.
+**Mimix Monitor** is a real-time web dashboard for Gunbot traders. It aggregates data from all your Gunbot instances and exchanges into a single, clean interface — giving you full visibility over your portfolio, PnL, positions, DCA risk, Bag Earn, and more.
 
 ---
 
@@ -30,6 +30,19 @@ No cloud. No API keys shared. No extra subscriptions. **Your data stays on your 
 
 ---
 
+## 🤔 Without Mimix vs With Mimix
+
+| 😩 Without Mimix | 😎 With Mimix |
+|---|---|
+| ❌ Spreadsheet to track PnL across multiple exchanges | ✅ Real PnL automatic — every exchange, every timeframe |
+| ❌ "Why is my bot stuck on this pair?" — no DCA visibility | ✅ Visual DCA grid + risk score + capital floor in 1 click |
+| ❌ Idle stablecoins earning **$0** in spot | ✅ Auto-stack idle capital into Earn — passive yield 24/7 |
+| ❌ Idle DCA bags generating **$0** while waiting recovery | ✅ **Bag Earn** puts every idle bag to work, redeems on sell |
+| ❌ No alerts → wake up to bad news | ✅ Real-time Telegram alerts on every important event |
+| ❌ Multiple Gunbot instances = manual chaos | ✅ Single pane of glass for all instances + exchanges |
+
+---
+
 ## 🔹 What is Mimix Monitor?
 
 Mimix Monitor connects directly to your Gunbot installation and displays everything in real time:
@@ -39,7 +52,9 @@ Mimix Monitor connects directly to your Gunbot installation and displays everyth
 | 📊 Portfolio overview | Total balance across all exchanges, live |
 | 💰 Three-layer PnL | Exchange PnL + Gunbot PnL + Real PnL |
 | 🎯 DCA Risk Engine | Grid analysis, capital floor, risk scoring |
-| 🏦 Earn Module | Auto idle capital → Binance / KuCoin / MEXC / OKX interest |
+| 📐 DCA Level Projector | Exact grid position, projected levels, floor price |
+| 💼 Bag Earn | Idle DCA bags auto-subscribed to Earn — redeems on sell |
+| 🏦 Earn Module | Auto idle capital → Binance / KuCoin / MEXC / OKX / Kraken / Bybit |
 | 🔍 24/7 Monitoring | Detects crashes, idle bots, and anomalies — Telegram alerts instantly |
 | ⚖️ Bot vs Buy & Hold | Is your bot actually beating a passive hold strategy? |
 | 🔔 Telegram alerts | Positions, PnL thresholds, dead pairs, and much more |
@@ -117,8 +132,47 @@ Real PnL = Exchange PnL + Gunbot PnL
 
 ---
 
+### 📐 DCA Level Projector
+
+The analytical core of the DCA tab — all data is 100% real and live, pulled directly from your Gunbot instance.
+
+- **Summary cards**: current price, floor price, remaining buys, capital used, break-even, DCA spread, risk score
+- **History bar**: filled orders for the current cycle — count, average price, capital deployed, last fill
+- **Projected levels table**: every future DCA level, trigger price, order size, % drop needed, capital floor row
+- **PENDING level** — the next expected buy highlighted in purple
+- **FLOOR level** — last fundable order highlighted; levels beyond are greyed out (no capital)
+
+> **Example:** XRP has 131 orders in bag, break-even at +77% above current price. The DCA Level Projector would have flagged CRITICAL risk long before reaching that depth — giving you time to adjust spread, add capital, or close manually.
+
+---
+
+### 💼 Bag Earn — Make Your Idle Bags Pay You
+
+> Stop letting your DCA bags sit there doing nothing. Put them to work.
+
+When you DCA on Gunbot, your bags wait in spot earning $0 while recovering. **Bag Earn fixes this automatically:**
+
+- Keeps exactly what the bot needs to trade in spot (last 5 DCA buy levels)
+- Sends the rest to flexible earn — Binance, KuCoin, OKX, Kraken, Bybit
+- **Pre-sell redeem**: when ROE crosses the sell zone, instantly redeems everything back to spot — you never miss a sell
+- Per-pair control — opt in/out for any pair, anytime
+- Zero manual work — set once, runs forever
+
+| Scenario | Idle bag | At 5% APY |
+|---|---|---|
+| Light DCA (5 pairs) | $2,000 | $100 / year |
+| Active DCA (15 pairs) | $10,000 | $500 / year |
+| Heavy DCA (30+ pairs) | $30,000 | $1,500 / year |
+| Multi-exchange power user | $80,000 | $4,000 / year |
+
+> 💡 **Running live in production**: $15,961 in earn across 18 active pairs on Binance, KuCoin, and OKX — 80% of idle capital working 24/7 while the bot trades normally. The market is down -41% on average: the bags are deeply underwater, and Bag Earn is generating passive yield on every single one while they wait for recovery.
+
+Works with indicator-based strategies (RSI, MACD, Bollinger Bands, TSSL, Wick Magic, OrderFlow Magic). Use with caution on strategies that base buy/sell decisions on spot balance size.
+
+---
+
 ### 🏦 Earn Module
-- Tracks idle capital moved to Simple Earn (Binance, KuCoin, MEXC, OKX — more exchanges coming)
+- Tracks idle capital moved to Simple Earn (Binance, KuCoin, MEXC, OKX, Kraken, Bybit)
 - Auto-subscribe / auto-redeem log with timestamps and amounts
 - APY tracking and total interest earned
 
@@ -172,24 +226,27 @@ Mimix Monitor is fully available in **English, Spanish, German, French, Italian,
 | Plan | Price | Includes |
 |---|---|---|
 | ⭐ **Early Access** | **$299.95** one-time | Mimix Monitor lifetime + **Mimix AI FREE** |
+| 🤖 **Mimix AI** *(add-on)* | **$199.95** one-time | AI assistant only — adds to any plan |
 | Standard *(after launch)* | $399.95 one-time | Mimix Monitor lifetime |
 
 🛒 **[Buy Now — $299.95](https://www.mimixmonitor.com)**
 
-> Early Access ends at launch. Price increases to $399.95 and Mimix AI is no longer included.
+> Early Access ends at launch. Price increases to $399.95 and Mimix AI is no longer included free. Early Access is the best deal: $299.95 gets you Mimix Monitor + Mimix AI ($199.95 standalone) — a permanent $100+ saving vs buying separately after launch.
 
 ---
 
 ## 🔹 Mimix AI *(Coming Soon)*
 
-Mimix AI is an intelligent assistant built specifically for Gunbot traders — available in **your native language**:
+Mimix AI is an intelligent assistant built specifically for Gunbot traders — already running inside the dashboard today as a live AI summary bar at the bottom of every screen.
+
+Available **exclusively to Early Access buyers** at no extra cost:
 
 - 💬 Natural language queries — *"How is BTC doing this week?"* *"Which pair is my biggest risk right now?"*
 - 📊 Portfolio distribution analysis — crypto, stocks, metals — all in one view
 - 🧠 AI-powered strategy optimization — reduce risk and maximize returns across asset classes
 - 🚨 Automatic anomaly detection — dead pairs, capital floor warnings, underperforming instances
 - 📄 Weekly PDF performance reports — automated summary delivered to your inbox
-- 🤖 Available exclusively to Early Access buyers at no extra cost
+- 🌍 Answers in your native language
 
 > **Example:** You have $50,000 split across BTC, ETH, Apple stock, and gold. Mimix AI analyzes your full portfolio and tells you: *"70% of your capital is in high-correlation assets — consider moving 15% to metals to reduce drawdown risk."* All in your language, all in one place.
 
@@ -217,7 +274,7 @@ pm2 start /root/mimix-monitor/MimixMonitor-linux --name MimixMonitor
 pm2 save && pm2 startup
 ```
 
-Open **http://YOUR_VPS_IP:2001** → enter your wallet and license key → done.
+Open **http://YOUR_VPS_IP:2001** — the first-run setup wizard walks you through license activation directly in the browser. No manual file editing required.
 
 > Full step-by-step guide included as `README-linux.txt` inside the ZIP.
 
@@ -228,7 +285,7 @@ Open **http://YOUR_VPS_IP:2001** → enter your wallet and license key → done.
 1. Extract the ZIP
 2. Double-click `MimixMonitor.exe`
 3. Open **http://localhost:2001**
-4. Enter your wallet and license key → done.
+4. Follow the setup wizard → enter your wallet and license key → done.
 
 > Note: Windows may show a SmartScreen warning — click "More info" → "Run anyway".
 
@@ -240,7 +297,7 @@ Open **http://YOUR_VPS_IP:2001** → enter your wallet and license key → done.
 chmod +x MimixMonitor-mac && ./MimixMonitor-mac
 ```
 
-Open **http://localhost:2001** → enter your wallet and license key → done.
+Open **http://localhost:2001** → follow the setup wizard → done.
 
 > Note: if macOS blocks the app, go to System Settings → Privacy & Security → Allow Anyway.
 
@@ -248,7 +305,7 @@ Open **http://localhost:2001** → enter your wallet and license key → done.
 
 ### ⚙️ Configuration
 
-On first run, a `config.json` is created automatically next to the binary:
+On first run, `config.json` is created automatically next to the binary:
 
 ```json
 { "port": 2001 }
@@ -263,15 +320,18 @@ Change the port if needed, then restart. Everything else (wallet, license key, G
 - [x] Multi-exchange dashboard
 - [x] Three-layer PnL system
 - [x] DCA Risk Engine
-- [x] Earn module (Binance / KuCoin / MEXC / OKX)
+- [x] DCA Level Projector
+- [x] Bag Earn — idle bags auto-subscribed to earn, redeems on sell
+- [x] Earn module (Binance / KuCoin / MEXC / OKX / Kraken / Bybit)
 - [x] 24/7 instance monitoring with Telegram alerts
 - [x] Bot vs Buy & Hold comparison
 - [x] License management system
 - [x] Telegram notifications
 - [x] Multi-language (7 languages)
+- [x] First-run setup wizard
 - [ ] Mimix AI — natural language portfolio assistant (crypto, stocks, metals)
 - [ ] Mobile app (iOS / Android)
-- [ ] More exchange integrations (Bybit futures, Gate.io)
+- [ ] More exchange integrations
 - [ ] Automated reporting (weekly PDF summary)
 - [ ] More features on customer request
 
@@ -295,4 +355,3 @@ Change the port if needed, then restart. Everything else (wallet, license key, G
 ---
 
 *© 2026 Mimix Monitor — Built for Gunbot traders.*
-
